@@ -10,8 +10,8 @@ def get_problem_ids_from_submissions(submissions_dir):
     ]
 
 def organize_problem_files():
-    base_dir = os.path.expanduser("~/re-algo")
-    sub_dir=os.path.expanduser("~/SyncBOJ")
+    base_dir = os.path.dirname(os.path.abspath(__file__))  # 현재 파일이 위치한 디렉토리 (re-algo)
+    sub_dir = os.path.join(os.path.dirname(base_dir), "SyncBOJ")  # re-algo와 같은 위치의 SyncBOJ
     submissions_dir = os.path.join(sub_dir, "submissions")
     problem_ids = get_problem_ids_from_submissions(submissions_dir)
 
